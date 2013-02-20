@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="/stylesheets/bootstrap.css" rel="stylesheet">
+<script src="/javascripts/jquery-1.8.2.min.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/jquery.activity-indicator-1.0.0.min.js"></script>
+<script type="text/javascript" src="/javascripts/nailthumb 2/jquery.nailthumb.1.1.js"></script>
+<script>
+		var loadPartialView = function(viewId,Url,paramaters){
+			$.ajax({
+			  url: Url,
+			  data :paramaters
+			}).done(function(data) {
+				//alert("call complete:"+data.slice(0, 100));
+				$('#'+viewId).append(data);
+			});	
+		};
+		
+$(document).ready(function(){
+		alert("making ajax call");
+		loadPartialView('SearchMe',
+						"http://localhost:3000/NodeSearch",
+						{resultViewId:"SearchResults"});
+		/*
+		$.ajax({
+		  url: "http://localhost:3000/NodeSearch",
+		  data :{resultViewId:"#SearchResults"}
+		}).done(function(data) {
+			alert("call complete:"+data.slice(0, 100));
+			$('#SearchMe').append(data);
+		});		
+		*/
+
+	});
+
+</script>
+</head>
+<body>
+	<div style="float:left; width:100%">
+		<div id="SearchMe" style="width:50%;float:left;">
+		</div>
+		<div id="SearchResults" style="float:left;width:20%;">
+		<div>
+	</div>
+</body>
+</html>

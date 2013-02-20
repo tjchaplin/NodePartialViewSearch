@@ -1,0 +1,37 @@
+<script src="/javascripts/partialViewLoader.js"></script>
+
+<script type="text/javascript">
+	  var destinationId = '{resultViewId}';
+	  var getViewDestionationId = function(viewDestinationId){
+	 			  if(viewDestinationId == null)
+						viewDestinationId ="defaultResult";
+						
+				return viewDestinationId;
+		};
+				
+      $(document).ready(function(){
+	  		var viewDestinationId = getViewDestionationId(destinationId);
+			alert(viewDestinationId);
+           $('#nodeSearchForm').submit(function(e) {
+				e.preventDefault();	
+				
+				var form = $(this);
+				var data = form.serialize();
+				loadPartialView(viewDestinationId,
+								form.attr('action'),
+								data);
+				return false;
+           });
+
+      });
+
+	  
+ </script>
+<div class="well">
+    <form id="nodeSearchForm" class="form-search" action="/contractSearch" style="margin-top: 5px;margin-bottom: 5px;" method="get">
+        <input type="text" style="width:70%; height:10%;" name="searchString">
+        <button id="productSearch" class="btn btn-primary btn-large" style="margin-left: 5%; width:15%; height: 10%;">Search</button>
+    </form>
+</div>
+<div id="defaultResult">
+</div>

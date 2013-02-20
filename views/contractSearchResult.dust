@@ -1,0 +1,49 @@
+<div id="contractSearchResults" class="well">
+	<ul class="media-list" style="list-style-type:none;">
+		<li class="media" style="background-color: white;margin-bottom:10px; padding-top:10px;padding-bottom: 10px;"">
+
+		<div class="media-body">
+			<div style="margin-left:110px;">
+				<h4 class="media-heading">License Name: {search}</h4>
+				<p><b>Contract Number:</b> 00000</p>
+			</div>
+		</div>
+		</li>
+		<li class="media" style="background-color: white;margin-bottom:10px; padding-top:10px;padding-bottom: 10px;"">
+
+		<div class="media-body">
+			<div style="margin-left:110px;">
+				<h4 class="media-heading">License Name: Tesco</h4>
+				<p><b>Contract Number:</b> 012345</p>
+			</div>
+		</div>
+		</li>
+		<li class="media" style="background-color: white;margin-bottom:10px; padding-top:10px;padding-bottom: 10px;"">
+
+		<div class="media-body">
+			<div style="margin-left:110px;">
+				<h4 class="media-heading">License Name: Tesco</h4>
+				<p><b>Contract Number:</b> 78910</p>
+			</div>
+		</div>
+		</li>
+				<li class="media" style="background-color: white;margin-bottom:10px; padding-top:10px;padding-bottom: 10px;"">
+
+		<div class="media-body">
+			<div style="margin-left:110px;">
+				<h4 class="media-heading">License Name: ASDA</h4>
+				<p><b>Contract Number:</b> 11111</p>
+			</div>
+		</div>
+		</li>
+		<li class="media" style="background-color: white;margin-bottom:10px; padding-top:10px;padding-bottom: 10px;"">
+
+		<div class="media-body">
+			<div style="margin-left:110px;">
+				<h4 class="media-heading">License Name: ASDA</h4>
+				<p><b>Contract Number:</b> 22222</p>
+			</div>
+		</div>
+		</li>
+	</ul>
+</div>

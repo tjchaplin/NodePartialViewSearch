@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="/stylesheets/bootstrap.css" rel="stylesheet">
+<script src="/javascripts/jquery-1.8.2.min.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/jquery.activity-indicator-1.0.0.min.js"></script>
+<script type="text/javascript" src="/javascripts/nailthumb 2/jquery.nailthumb.1.1.js"></script>
+<script src="/javascripts/partialViewLoader.js"></script>
+<script>	
+$(document).ready(loadPartialView('SearchMe',
+								  "http://localhost:3000/NodeSearch",
+								  {resultViewId:"SearchResult"})
+								  );					
+</script>
+</head>
+<body>
+	<div style="float:left; width:100%">
+		<div id="SearchMe" style="width:50%;float:left;">
+		</div>
+		<div id="SearchResult" style="width:50%;float:left;">
+		</div>
+	</div>
+</body>
+</html>
