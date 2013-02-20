@@ -1,0 +1,104 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="/javascripts/jquery-1.8.2.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/jquery.activity-indicator-1.0.0.min.js"></script>
+
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+    </style>
+    <link href="/stylesheets/bootstrap-responsive.css" rel="stylesheet">
+    <title>{title}</title>
+    <script src="https://apis.google.com/js/client.js"></script>
+    <script>
+
+      function auth() {
+        var config = {
+          'client_id': '271112442029-m73fn8kqaa0k6036l1l0h345vh86iacp.apps.googleusercontent.com',
+          'scope': 'https://www.googleapis.com/auth/urlshortener'
+        };
+        gapi.auth.authorize(config, function() {
+          console.log('login complete');
+          console.log(gapi.auth.getToken());
+        });
+      }
+        $(document).ready(function(){
+            $("#googleLogin").click(function(event){
+                window.location="/auth/google";
+            });
+        });
+
+
+
+    </script>
+
+</head>
+<body>
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="#">{title}</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav pull-right">
+                    {?isAuthenticated}
+                        <li><a href="#">{user.displayName}</a> </li>
+                        <!--<li class="active"> <button id="signOutBtn" type="submit" class="btn">Sign Out</button></li>-->
+                    {:else}
+                        <li class="active"> <button id="googleLogin" type="submit" class="btn">Sign in</button></li>
+                    {/isAuthenticated}
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3">
+            <div class="well sidebar-nav">
+                <ul class="nav nav-list">
+                    <li class="nav-header">Sidebar</li>
+                    <li class="active"><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li class="nav-header">Sidebar</li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li class="nav-header">Sidebar</li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9" >
+            <div class="well">
+                <form class="form-search" style="margin-top: 5px;margin-bottom: 5px;" action="/productSearch">
+                    <input type="text" style="width:80%; height:10%;">
+                    <button type="submit" class="btn btn-primary btn-large" style="margin-left: 5%; width:15%; height: 10%;">Search</button>
+                </form>
+            </div>
+        </div><!--/span-->
+    </div><!--/row-->
+
+    <hr>
+
+    <footer>
+        <p>&copy; Company 2013</p>
+    </footer>
+
+</div><!--/.fluid-container-->
+
+</body>
